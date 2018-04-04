@@ -1,0 +1,981 @@
+/*-- -- -- -- -- -- -- -- -- --
+FONTS
+-- -- -- -- -- -- -- -- -- -- */
+
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+    @font-face {
+        font-family: 'league-spartan';
+        src: url('../assets/fonts/leaguespartan-bold-webfont.woff2') format('woff2'), url('../assets/fonts/leaguespartan-bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+/* -- -- -- -- -- -- -- -- -- --
+SCSS VARIABLES
+-- -- -- -- -- -- -- -- -- -- */
+
+$primary-color:#cf1738;
+$nav-color:#cf1738;
+$secondary-color: #013040;
+$button-color: #f5c610;
+$third-color: #f3f1f3;
+$primary-font:'league-spartan';
+$secondary-font: 'Open Sans', sans-serif;
+
+/* -- -- -- -- -- -- -- -- -- --
+GENERAL
+-- -- -- -- -- -- -- -- -- -- */
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body {
+        background: $third-color;
+    }
+
+    .wrapper {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: $primary-font;
+    }
+
+    .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main-title  {
+        margin: 0 auto;
+        font-family: $primary-font;
+        color: $primary-color;
+        text-shadow: 1px 1px $secondary-color;
+        text-align: center;
+    }
+
+    .sub-title {
+        color: $primary-color;
+        text-shadow: 1px 1px $secondary-color;
+        text-align: center;
+    }
+
+    .text-small {
+        font-size: 0.8em;
+    }
+    .lead {
+        line-height: 1;
+    }
+
+    .magical-highlight {
+      background-image: linear-gradient(120deg, #52E5E7 0%, #130CB7 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0em;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+      &:hover {
+        background-size: 100% 88%;
+  }
+    }
+    ::selection {
+        background: $button-color;
+        text-shadow: 0;
+}
+
+/* -- -- -- -- -- -- -- -- -- --
+NAV MOBILE
+-- -- -- -- -- -- -- -- -- -- */
+.title-bar {
+    background: $third-color;
+    height: 65px;
+}
+
+.mobile-logo {
+    border-radius: 5%;
+    width: 145px;
+    height: auto;
+    margin-top: -5px;
+}
+
+.menu-icon {
+    &::after {
+        background: $primary-color;
+        box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
+    }
+
+}
+
+.off-canvas {
+    background: $secondary-color;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+        .active {
+            color: $button-color !important;
+            font-weight: bold !important;
+        }
+    li {
+        width: 125px;
+        float: left;
+        text-align: center;
+        padding: 0;
+        margin: 15px 0 0 0px;
+        .circleIcon {
+            position: relative;
+            width: 50%;
+            // height: auto;
+            margin: 0 auto;
+            padding-top: 50%;
+            border-radius: 50%;
+            background: $third-color;
+        }
+        .nav-icon {
+        position: absolute;
+        width: 60%;
+        height: auto;
+        top: calc(50% - 60% / 2); /* height divided by 2*/
+        left: calc(50% - 60% / 2); /* width divided by 2*/
+        }
+    }
+    .mobile-center {
+        position: relative;
+        left: 25%;
+        right: 25%;
+    }
+    a {
+        color: white;
+    }
+}
+.close-button {
+    color: $button-color;
+    &:focus {
+        color: $button-color;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+/* -- -- -- -- -- -- -- -- -- --
+NAV DESKTOP
+-- -- -- -- -- -- -- -- -- -- */
+
+    nav {
+        height: 100px;
+        margin-bottom: 1em;
+        font-family: $secondary-font;
+        color: white;
+
+    }
+
+    .site-logo {
+        height: auto;
+        background: $third-color;
+        margin: 0 auto;
+        padding: 0 10px 10px 10px;
+        border-bottom-left-radius: 25px; 
+        border-bottom-right-radius: 25px;
+        line-height: 15px;
+    }
+
+    .desktop-menu {
+        margin-top: -s5px;
+        li {
+            display: inline-block;
+            width: 13.5%;
+            height: auto;
+            background: $primary-color;
+            color: $third-color;
+            text-align: center;
+            margin-right: 2%;
+            padding: 15px 0 15px 0;
+            border-bottom-right-radius: 15px ;
+            border-bottom-left-radius: 15px ;
+            background-image: linear-gradient(120deg, $secondary-color 0%, $secondary-color 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0em;
+            background-position: 0 100%;
+            transition: background-size 0.25s ease-in; //Check this
+            &:hover {
+            // background: rgba(207,23,56,0.3);
+            font-weight: bold;
+            background-size: 100% 100%;
+            color: $button-color;
+            }
+        }
+        .active {
+        background: rgba(1, 48, 64, 0.8);
+        color: $button-color;
+        font-weight: bold;
+        &:hover {
+            background: rgba(1, 48, 64, 0.9);
+        }
+        }
+    }
+
+    .circleIcon {
+        width: 45%;
+        height: auto;
+        position: relative;
+        margin: 0 auto;
+        padding-top: 45%;
+        border-radius: 50%;
+        background: $third-color;
+
+    }
+
+    .nav-icon {
+        position: absolute;
+        width: 60%;
+        height: auto;
+        top: calc(50% - 60% / 2); /* height divided by 2*/
+        left: calc(50% - 60% / 2); /* width divided by 2*/
+    }
+
+
+/* -- -- -- -- -- -- -- -- -- --
+HEADER SECTION
+-- -- -- -- -- -- -- -- -- -- */
+        
+        header {
+            height: 400px;
+            background: #EA5455;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(#FEB692, #EA5455);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(#FEB692, #EA5455); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEB692', endColorstr='#EA5455',GradientType=0 ); /* ie6-9 */
+        }
+        .home-header {
+            background: $secondary-color url("../assets/img/header.jpg");
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 75vh;
+            // height: 75vh;
+            // background: $secondary-color url("../assets/img/header.jpg");
+            // background-attachment: fixed;
+            // background-position: center top;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // -webkit-background-size: cover;
+            // -moz-background-size: cover;
+            // -o-background-size: cover;
+            margin-bottom: 2rem;
+        }
+
+        .home-header-title {
+            display: inline-block;
+            background: rgba(1, 48, 64, 0.5);
+            color: $third-color;
+            text-shadow: 2px 2px $primary-color;
+            padding:10px;
+            margin-left: 7%;
+            border-radius: 5%;
+            h1 {
+            font-size: 8vh;
+            p {
+                padding-bottom: 15px;
+            }
+            }
+        }
+        .header-title-container {
+            text-align: center;
+        }
+        .header-title {
+            display: inline-block;
+            text-align: center;
+            color: $third-color;
+            text-shadow:2px 2px $secondary-color;
+            h1 {
+            font-size: 4em;
+            }
+            p {
+                text-shadow: none;
+            }
+        }
+
+/* -- -- -- -- -- -- -- -- -- --
+MAIN SECTION (HOME)
+-- -- -- -- -- -- -- -- -- -- */
+
+    .callout {
+        background: white;
+        border: none;
+    }
+
+.aboutCallout {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+    .course-tab {} // Modifies the course tab
+    .course-title {
+        background: $secondary-color;
+        color: $third-color;
+        border: none;
+        text-align: center;
+    }
+
+    .course-title h2 {
+        opacity: .9;
+    }
+
+    .course-text {
+        color: $secondary-color;
+        border: none;
+        border-radius: 5px;
+        a {
+            &:hover {
+                background: $button-color;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .course-button {
+        background: $button-color;
+        font-family: $primary-font;
+        color: $secondary-color;
+        padding: 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+.profile-img-home { 
+    position: relative;
+    border-radius: 50%;
+    width: 69%;
+    // height: auto;
+    padding-top: 60%;
+    margin: 0 auto;
+    background: #f5c610;
+}
+
+
+/* -- -- -- -- -- -- -- -- -- --
+ABOUT PAGE 
+-- -- -- -- -- -- -- -- -- -- */
+    .profile-img { // About Page 
+      position: relative;
+      width: 300px;
+      height: 300px;
+      /*CENTERS VERTICALLY AND HORIZONTALLY */
+      top: calc(50% - 300px / 2);
+      /* height divided by 2*/
+      left: calc(50% - 300px / 2);
+      /* width divided by 2*/
+      border-radius: 500px;
+      border: 5px solid #013040;
+      background: #f5c610;
+      overflow: hidden; }
+      .logo {
+        text-align: center;
+        margin: 25px 0 51px 0;
+        img {
+            max-width: 75%;
+        }
+
+    }
+
+/* -- -- -- -- -- -- -- -- -- --
+COURSES PAGE 
+-- -- -- -- -- -- -- -- -- -- */
+    .course-box {
+        background: #42A5F5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2657eb, #42A5F5);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2657eb, #42A5F5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2657eb', endColorstr='#42A5F5',GradientType=0 ); /* ie6-9 */
+        border:none;
+        border-radius: 15px;
+        padding: 25px 0 25px 0;
+    }
+    h1.course-title {
+        background: transparent;
+        color: $third-color;
+        border-bottom: 2px solid $third-color;
+        text-shadow: none;
+    }
+
+    .course-information {
+        padding: 0 15px 0 15px;
+        color: $third-color;
+    }
+
+    .course-details {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.3em;
+            padding: 5px;
+            border-bottom: 1px solid $third-color;
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+    .course-picture {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .onlineClasses {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+/* -- -- -- -- -- -- -- -- -- --
+FORMS PAGE 
+-- -- -- -- -- -- -- -- -- -- */
+    .documents {
+        margin: 25px 0 25px 0;
+    }
+    .documentsContainer {
+        margin: 25px 0 25px 0;
+    }
+    .form-title {
+        height: 250px;
+        margin: 0 auto;
+        h1 {
+            position: relative;
+            top: 15%;
+            bottom: 15%;
+            font-family: $primary-font;
+            color: $primary-color;
+            font-size: 4em;
+            text-shadow: 2px 2px $secondary-color;
+            text-align: center;
+        }
+    }
+    .PDFbox {
+       width: 250px;
+       height: 250px;
+       margin: 0 auto;
+       border: 2px solid $secondary-color;
+       border-radius: 5%;
+       text-align: center;
+       background: white;
+       p {
+        position: relative;
+        font-family: $primary-font;
+        color: $primary-color;
+        font-size: 4em;
+        top: 25%;
+        bottom: 25%;
+       }
+    }
+
+    .download-button {
+        background: $button-color;
+        font-family: $primary-font;
+        font-size: 1.5em;
+        color: $secondary-color;
+        margin-top: 50px;
+        padding: 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      background-image: linear-gradient(120deg, $secondary-color 0%, $secondary-color 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0em;
+      background-position: 0 100%;
+      transition: background-size 0.25s ease-in;
+      &:hover {
+        background-size: 100% 100%;
+        color: $button-color;
+  }
+    }
+    .formDescription {
+        height: 250px;
+        padding: 10px;
+        border-radius: 5%;
+        background: white;
+        p {
+            position: relative;
+            // top: 125%;
+            // bottom: 15%;
+        }
+    }
+
+/* -- -- -- -- -- -- -- -- -- --
+CONTACT PAGE
+-- -- -- -- -- -- -- -- -- -- */
+
+    .contact-icon-container {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .contact-title {
+        margin-bottom: 10px;
+    }
+    .contact-info-container h3 {
+        margin-top: 5px;
+    }
+
+    #contactPageForm {
+    margin-bottom: 50px;
+    }
+    .contactIcon {
+            position: relative;
+            width: 25%;
+            // height: auto;
+            margin: 0 auto;
+            padding-top: 25%;
+            border-radius: 50%;
+            background: $third-color;
+    }
+
+    .sidebarIcon {
+            position: relative;
+            width: 50%;
+            // height: auto;
+            margin: 0 auto;
+            padding-top: 50%;
+            border-radius: 50%;
+            background: $third-color;
+    }
+
+    #confirmationModal {
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    .confirmationModalContent {
+    background-color: $secondary-color;
+    color: $button-color;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    h1,p {
+        text-align: center !important;
+    }
+}
+
+    .closeSuccessModal {
+    color: $button-color;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .closeSuccessModal:hover,
+    .closeSuccessModal:focus {
+    color: $button-color;
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    label.PrimaryContact {
+        color: $secondary-color;
+        .contactPageError {
+            float: right;
+            font-weight: bold;
+            font-style: italic;
+            color: red;
+            }
+            .recaptcha {
+                float: left;
+            }
+    }
+
+
+    label.qucikFormLabel {
+        .contactPageError {
+            float: left;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: italic;
+            color: $button-color;
+
+        }
+    }
+
+
+/* -- -- -- -- -- -- -- -- -- --
+FAQ PAGE
+-- -- -- -- -- -- -- -- -- -- */
+    .faq-body {
+        margin: 15px 0 15px 0;
+    }
+    .questions-container {
+        text-align: center;
+        ul {
+            list-style-type: none;
+        }
+    }
+    .question-header { //Question's Header
+        background: $secondary-color;
+        color: $button-color ;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: center;
+        outline: none;
+        transition: 0.4s;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+    }
+    .question-header.active, .question-header:hover { 
+        background: $secondary-color;
+        color: $primary-color;
+    }
+    p.questionAnswer { // Question's Answer 
+        padding: 0 18px;
+        background-color: white;
+        color: $secondary-color;
+        max-height: 0;
+        overflow: hidden;
+        text-align: left;
+        transition: max-height 0.2s ease-out;
+    }
+
+/* -- -- -- -- -- -- -- -- -- --
+FOOTER SECTION
+-- -- -- -- -- -- -- -- -- -- */
+
+/*General*/
+
+
+footer {
+    background: #130CB7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(#52E5E7, #130CB7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#52E5E7, #130CB7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89253e', endColorstr='#2657eb',GradientType=0 ); /* ie6-9 */
+    padding-bottom: 15px;
+}
+
+footer h2 {
+    padding-top: 25px;
+}
+
+footer p {
+    color: $third-color;
+}
+
+.highlight {
+    background: $primary-color;
+    color: $third-color;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+hr {
+     border-bottom: 4px solid $third-color;
+     border-radius: 50px;
+}
+
+
+footer .footer-line { //Chopping Block
+    position: absolute;
+    max-width: 1px;
+    height: 35vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: $button-color;
+    z-index: 1;
+}
+
+.footer-circle { //  the circle that surrounds the footer's icon
+    position: absolute;
+    max-width: 75px; // you must keep these the same as height
+    height: 75px; // you must keep these the same as max-width
+    left: 0; // keeps this centered
+    right: 0; // keeps this centered
+    top: -35px; // changes the position
+    margin-left: auto; // keeps this centered
+    margin-right: auto; // keeps this centered
+    background: $button-color;
+    border-radius: 100%;
+
+}
+.footer-mail-icon { // This is the icon in the footer
+    position: absolute;
+    width: 60%;
+    height: auto;
+    top: calc(50% - 60% / 2); /* height divided by 2*/
+    left: calc(50% - 60% / 2); /* width divided by 2*/
+    z-index: 50;
+}
+
+.siteMapMenu { /*Contact Form*/
+        margin-top: -15px;
+        li {
+            display: inline-block;
+            width: 25%;
+            height: auto;
+            color: $third-color;
+            text-align: center;
+            padding: 15px 0 15px 0;
+            border-radius: 75%;
+            &:hover {
+            background: rgba(207,23,56,0.5);
+            font-weight: bold;
+            }
+        }
+        .active {
+        color: $button-color;
+        font-weight: bold;
+        }
+    }
+
+/*Quick Information*/
+.quickInfoTitle {
+    text-shadow: none;
+}
+
+// .quickInfo {
+//     margin-top: 55px;
+// }
+
+.quickInfoParagraph {
+    word-wrap: break-word;
+}
+/*Quick Contact*/
+
+
+
+.qucikFormLabel {
+    color: $third-color;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+}
+
+.form-button {
+    font-family: $primary-font;
+    background: $button-color;
+    color: $secondary-color;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-button:hover {
+    cursor: pointer;
+    background: rgba(245, 198, 16, 0.8)
+}
+
+
+.footer-circle-wrapper {
+    position: relative;
+}
+
+
+
+.footer-facebook-icon {
+    width: 100px;
+    margin: 0;
+    text-align:center;
+
+}
+
+/* -- -- -- -- -- -- -- -- -- --
+FORMS
+-- -- -- -- -- -- -- -- -- -- */
+input::placeholder, textarea::placeholder {
+    color: $secondary-color;
+    opacity: 0.7;
+}
+
+.quickContactForm {
+ [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    margin: 0 0 0.5rem;
+    border: 0;
+    border-radius: 10px;
+    &:focus {
+    }
+ }
+}
+.formFieldError {
+    color: #FBC02D;
+    font-weight: bold;
+}
+
+.mainFormLabel {
+    color: $secondary-color;
+}
+/* -- -- -- -- -- -- -- -- -- --
+MEDIA QUERY
+-- -- -- -- -- -- -- -- -- -- */
+
+@media (max-width: 730px) {
+    .desktop-nav {
+        display: none;
+    }
+    .footer-line, .vertical-line, .FAQ-line{
+        display: none;
+    }
+    .footer-circle {
+        position: relative;
+        margin-top: 15px;
+    }
+}
+/*READABILITY FOR MOBILE*/
+@media (max-width: 640px) {
+    * {
+        text-shadow: 0 0 transparent;
+    }    
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .home-header-title {
+        text-shadow: 2px 2px $primary-color;
+    }
+    .contact-info-container {
+        background: $secondary-color;
+        padding: 15px 0 15px 0;
+        color: $button-color;
+    }
+}
+
+@media (min-width: 740px) {
+.contactIcon {
+    padding-top: 0;
+}
+.quickInfoSection {
+    padding-left:0 ;
+    padding-right:0 ;
+    margin: 0;
+    .contactIcon {
+        padding-top: 25%;
+    }
+}
+
+}
+/*HOME PAGE - ABOUT SECTION*/
+@media (max-width: 750px) {
+    .home-header {
+        background-attachment: scroll;
+    }
+    .aboutIowa {
+        width: 50%;
+    }   
+    .aboutNissen {
+        width: 50%;
+    }
+    .aboutTools {
+        position: relative;
+        width: 50%;
+        margin: 0 auto;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .quickInfoSection {
+        .contactIcon {
+            width:25%;
+            padding-top: 25%;
+        }
+    }
+
+}
+
+@media (max-width: 951px) {
+    .quickInfoSection {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .aboutIowa {
+        width: 100%;
+    }   
+    .aboutNissen {
+        width: 100%;
+    }
+    .aboutTools {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1060px) {
+    .trainingAgreement {
+        width: 100%;
+        float: left;
+    }
+    .download-box {
+        width: 25%;
+        float: left;
+    }
+    .formDescriptionContainer {
+        float: left;
+        width: 65%;
+
+    }
+}
+@media (max-width: 752px) {
+    .download-box {
+        width: 100%;
+    }
+    .formDescriptionContainer {
+        padding-top: 15px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 639px) { // Sidebar - contact page
+    .sidebarIcon {
+        width: 25%;
+        padding-top: 25%;
+    }
+}
